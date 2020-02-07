@@ -1,5 +1,13 @@
 .side-bar
   .side-bar__user-name
-    サイドバー上
+    .side-bar__user-name__top-items
+      .side-bar__user-name__top-items__name
+        uehara
+      .side-bar__user-name__top-items__icons
+        = link_to "#", class: "side-bar__user-name__top-items__icons__btn" do
+          = icon('fas', 'edit')
+        = link_to "#", class: "side-bar__user-name__top-items__icons__btn" do
+          = icon('fas', 'cog')
   .side-bar__group-list
     サイドバー下
+    
