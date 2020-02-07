@@ -9,6 +9,8 @@
 }
 
 .side-bar {
+  color: #ffffff;
+  font-weight: bold;
   width: 300px;
   &__user-name {
     background-color: #253141;
@@ -17,7 +19,6 @@
     align-items: center;
     padding: 0 20px;
     &__top-items {
-      color: #ffffff;
       height: 20px;
       width: 260px;
       display: flex;
@@ -39,6 +40,22 @@
   &__group-list {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
+    &__each {
+      height: 91px;
+      padding: 20px 20px 40px;
+      border: 1px solid yellow;
+      &__text1 {
+        height: 15px;
+        font-size: 15px;
+        margin-bottom: 5px;
+        line-height: 15px;
+      }
+      &__text2 {
+        height: 11px;
+        font-size: 11px;
+        line-height: 11px;
+      }
+    }
   }
 }
 
