@@ -24,7 +24,7 @@
     }
     .group-edit {
       width: 72ox;
-      color: #38aef0;
+      color: $editBlue;
       text-align: center;
       display: flex;
       align-items: center;
@@ -34,9 +34,9 @@
         font-size: 16px;
         text-align: center;
         text-decoration: none;
-        color: #38aef0;
+        color: $editBlue;
         line-height: 40px;
-        border: 1px solid #38aef0;
+        border: 1px solid #$editBlue;
       }
     }
   }
@@ -100,7 +100,7 @@
       }
     }
     .submit-btn {
-      background-color: #38aef0;
+      background-color: $editBlue;
       height: 50px;
       margin-left: 15px;
       color: #ffffff;
