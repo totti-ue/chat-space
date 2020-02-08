@@ -1,0 +1,51 @@
+// メイン画面左側全体を指定
+.side-bar {
+  color: #ffffff;
+  font-weight: bold;
+  height: 100vh;
+  width: 300px;
+  // 上：ユーザー名表示
+  &__top {
+    background-color: #253141;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    .user-box {
+      height: 20px;
+      width: 260px;
+      margin: 0px 20px;
+      display: flex;
+      justify-content: space-between;
+      .user-name {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      .edit-setting-icons {
+        width: 60px;
+        text-align: right;
+        &__btn {
+          color: #ffffff;
+          text-decoration: none;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  // 下：グループリスト表示
+  &__group-lists {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    .a_group-list {
+      padding: 20px 20px 40px;
+      .group-name {
+        font-size: 15px;
+        line-height: 15px;
+        margin-bottom: 5px;
+      }
+      .message-notice {
+        font-size: 11px;
+        line-height: 11px;
+      } 
+    }
+  }
+}

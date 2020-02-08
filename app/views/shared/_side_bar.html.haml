@@ -1,0 +1,19 @@
+-# メイン画面左側全体を指定
+.side-bar
+  -# 上：ユーザー名表示
+  .side-bar__top
+    .user-box
+      .user-name
+        username
+      .edit-setting-icons
+        = link_to "#", class: "edit-setting-icons__btn" do
+          = icon('fa', 'edit')
+        = link_to "#", class: "edit-setting-icons__btn" do
+          = icon('fa', 'cog')
+  -# 下：グループリスト表示
+  .side-bar__group-lists
+    .a_group-list
+      .group-name
+        techexpert
+      .message-notice
+        まだメッセージはありません

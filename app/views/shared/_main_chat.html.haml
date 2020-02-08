@@ -1,0 +1,39 @@
+-# メイン画面右側全体を指定
+.main-chat
+  -# 上：選択中のグループ
+  .main-chat__current-group
+    .group-info
+      .group-name
+        test
+      .group-member
+        Member: username
+    .group-edit
+      = link_to "#", class: "group-edit__edit-btn" do
+        Edit
+
+  -# 中：メッセージ一覧
+  .main-chat__contents
+    .message-info
+      .username_and_post-date
+        .username
+          username
+        .post-date
+          2020/02/02(Sun) 11:02:01
+      .text-contents
+        おはよう！
+      .username_and_post-date
+        .username
+          stranger
+        .post-date
+          2020/02/02(Sun) 13:08:34
+      .text-contents
+        こんにちは！
+  
+  -# 下：投稿フォーム
+  .message-form
+    %form.text-box
+      %input.text{:placeholder => "type a message", :type => "text"}
+      %label{class: "add_img"}
+        = icon('fas', 'image')
+        %input.file{:type => "file"}
+    %input.submit-btn{:value => "Send", :type => "submit"}
