@@ -1,18 +1,16 @@
 .side-bar
-  .side-bar__user-name
-    .side-bar__user-name__top-items
-      .side-bar__user-name__top-items__name
-        uehara
-      .side-bar__user-name__top-items__icons
-        = link_to "#", class: "side-bar__user-name__top-items__icons__btn" do
-          = icon('fas', 'edit')
-        = link_to "#", class: "side-bar__user-name__top-items__icons__btn" do
-          = icon('fas', 'cog')
-  .side-bar__group-list
-    .side-bar__group-list__each
-      .side-bar__group-list__each__text1
-        techmaster
-      .side-bar__group-list__each__text2
+  .side-bar__top
+    .user-name-box
+      .user-name
+        username
+      .edit-setting-icons
+        = link_to "#", class: "edit-setting-icons__btn" do
+          = icon('fa', 'edit')
+        = link_to "#", class: "edit-setting-icons__btn" do
+          = icon('fa', 'cog')
+  .side-bar__main-group-lists
+    .a_group-list
+      .a_group-list__group-name
+        techexpert
+      .a_group-list__message-notice
         まだメッセージはありません
-    サイドバー下
-    
