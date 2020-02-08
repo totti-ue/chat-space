@@ -1,4 +1,6 @@
+-# メイン画面右側全体を指定
 .main-chat
+  -# 上部分
   .current-group
     .group-name-member
       .group-name
@@ -8,7 +10,26 @@
     .group-name-edit
       = link_to "#", class: "group-name-edit__edit-btn" do
         Edit
-  .contents
-    contents
+
+  -# 中央部分
+  .chat-contents
+    .chat-contents__a_message
+      .username_and_post-date
+        .username
+          username
+        .post-date
+          2020/02/02(Sun) 11:02:01
+      .text-contents
+        おはよう！
+      .username_and_post-date
+        .username
+          stranger
+        .post-date
+          2020/02/02(Sun) 13:08:34
+      .text-contents
+        こんにちは！
+    .chat-contents__a_message
+  
+  -# 下部分
   .footer
     footer
