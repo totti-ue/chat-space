@@ -66,7 +66,6 @@
 // メイン画面右側全体を指定
 .main-chat {
   font-weight: bold;
-  height: 100vh;
   width: calc(100vw - 300px);
   // 右上：選択中のグループ表示
   .current-group {
@@ -75,22 +74,18 @@
     border-bottom: 1px solid #eeeeee;
     display: flex;
     justify-content: space-between;
-    margin: 0px 40px;
+    padding: 0px 40px;
+    border-bottom: 1px solid #eee;
     .group-name-member {
       .group-name {
-        height: 20px;
         margin-top: 35px;
         margin-bottom: 15px;
         color: gray;
         font-size: 20px;
-        line-height: 20px;
       }
       .group-member {
-        height: 12px;
         color: #999999;
         font-size: 12px;
-        line-height: 12px;
-        padding-bottom: 0px;
       }
     }
     .group-name-edit {
@@ -127,7 +122,7 @@
           color: #333333;
           font-size: 16px;
           line-height: 16px;
-          margin-right: 5px;
+          margin-right: 10px;
         }
         .post-date {
           color: #999999;
@@ -143,8 +138,48 @@
     }
   }
   // 下部：投稿フォーム
-  .footer {
+  .message-form {
     background-color: #d2d2d2;
     height: 90px;
+    padding: 0px 40px;
+    display: flex;
+    align-items: center;
+    .text-box {
+      background-color: #ffffff;
+      color: gray;
+      height: 50px;
+      width: 100%;
+      padding: 0px 10px;
+      line-height: 50px;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      .text {
+        width: 100%;
+        border: none;
+      }
+      .add_img {
+        position: absolute;
+        right: 10px;
+        text-decoration: none;
+        color: gray;
+        .file {
+          display: none;
+        }
+      }
+    }
+    .submit {
+      background-color: #38aef0;
+      height: 50px;
+      margin-left: 15px;
+      .submit-btn {
+      width: 100%;
+      line-height: 50px;
+      border: 1px solid #38aef0;
+      text-decoration: none;
+      color: #ffffff;
+      padding: 0px 30px;
+      }
+    }
   }
 }
