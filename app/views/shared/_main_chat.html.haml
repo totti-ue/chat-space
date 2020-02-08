@@ -28,16 +28,12 @@
           2020/02/02(Sun) 13:08:34
       .text-contents
         こんにちは！
-    .chat-contents__a_message
   
   -# 下部分
   .message-form
-    .text-box
+    %form.text-box
       %input.text{:placeholder => "type a message", :type => "text"}
-      .add_img
-        %label{}
-          = icon('fas', 'image')
-          %input.file{:type => "file", :class => "file"}
-    .submit
-      .submit-btn
-        Send
+      %label{class: "add_img"}
+        = icon('fas', 'image')
+        %input.file{:type => "file", :class => "file"}
+    %input.submit-btn{:value => "Send", :type => "submit"}
