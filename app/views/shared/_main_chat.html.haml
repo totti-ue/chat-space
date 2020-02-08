@@ -1,19 +1,19 @@
 -# メイン画面右側全体を指定
 .main-chat
-  -# 上部分
-  .current-group
-    .group-name-member
+  -# 上：選択中のグループ
+  .main-chat__current-group
+    .group-info
       .group-name
         test
       .group-member
         Member: username
-    .group-name-edit
-      = link_to "#", class: "group-name-edit__edit-btn" do
+    .group-edit
+      = link_to "#", class: "group-edit__edit-btn" do
         Edit
 
-  -# 中央部分
-  .chat-contents
-    .chat-contents__a_message
+  -# 中：メッセージ一覧
+  .main-chat__contents
+    .message-info
       .username_and_post-date
         .username
           username
@@ -29,11 +29,11 @@
       .text-contents
         こんにちは！
   
-  -# 下部分
+  -# 下：投稿フォーム
   .message-form
     %form.text-box
       %input.text{:placeholder => "type a message", :type => "text"}
       %label{class: "add_img"}
         = icon('fas', 'image')
-        %input.file{:type => "file", :class => "file"}
+        %input.file{:type => "file"}
     %input.submit-btn{:value => "Send", :type => "submit"}

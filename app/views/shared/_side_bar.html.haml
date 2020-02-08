@@ -1,8 +1,8 @@
 -# メイン画面左側全体を指定
 .side-bar
-  -# 上部：ユーザー名表示
+  -# 上：ユーザー名表示
   .side-bar__top
-    .user-name-box
+    .user-box
       .user-name
         username
       .edit-setting-icons
@@ -10,10 +10,10 @@
           = icon('fa', 'edit')
         = link_to "#", class: "edit-setting-icons__btn" do
           = icon('fa', 'cog')
-  -# 下部：グループリスト表示
-  .side-bar__main-group-lists
+  -# 下：グループリスト表示
+  .side-bar__group-lists
     .a_group-list
-      .a_group-list__group-name
+      .group-name
         techexpert
-      .a_group-list__message-notice
+      .message-notice
         まだメッセージはありません
