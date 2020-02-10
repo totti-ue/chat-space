@@ -57,3 +57,5 @@ gem 'haml-rails'
 
 # アイコン導入gem
 gem 'font-awesome-sass'
+
+gem 'devise'
