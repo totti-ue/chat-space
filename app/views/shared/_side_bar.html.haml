@@ -6,14 +6,16 @@
       .user-name
         = current_user.name
       .edit-setting-icons
-        = link_to new_group_path(current_user), class: "edit-setting-icons__btn" do
+        = link_to new_group_path, class: "edit-setting-icons__btn" do
           = icon('fa', 'edit')
-        = link_to edit_user_path(current_user), class: "edit-setting-icons__btn" do
+        = link_to edit_user_path(current_user.id), class: "edit-setting-icons__btn" do
           = icon('fa', 'cog')
   -# 下：グループリスト表示
   .side-bar__group-lists
-    .a_group-list
-      .group-name
-        techexpert
-      .message-notice
-        まだメッセージはありません
+    - current_user.groups.each do |group|
+      .a_group-list
+        = link_to "#" do
+          .group-name
+            = group.name
+          .message-notice
+            まだメッセージはありません
