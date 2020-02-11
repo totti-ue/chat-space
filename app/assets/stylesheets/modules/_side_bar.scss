@@ -35,16 +35,21 @@
   &__group-lists {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-    .a_group-list {
-      padding: 20px 20px 40px;
-      .group-name {
-        font-size: 15px;
-        line-height: 15px;
-        margin-bottom: 5px;
-      }
-      .message-notice {
-        font-size: 11px;
-        line-height: 11px;
+    .group-link {
+      color: white;
+      text-decoration: none;
+      .a_group-list {
+        border: 1px solid gray;
+        padding: 20px 20px 40px;
+        .group-name {
+          font-size: 15px;
+          line-height: 15px;
+          margin-bottom: 5px;
+        }
+        .message-notice {
+          font-size: 11px;
+          line-height: 11px;
+        }
       } 
     }
   }

@@ -13,9 +13,9 @@
   -# 下：グループリスト表示
   .side-bar__group-lists
     - current_user.groups.each do |group|
-      .a_group-list
-        = link_to "#" do
+      = link_to "#", class: "group-link" do
+        .a_group-list
           .group-name
             = group.name
           .message-notice
-            まだメッセージはありません
+            まだメッセージはありません 
