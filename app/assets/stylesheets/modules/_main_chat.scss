@@ -42,25 +42,24 @@
   }
   // 中：メッセージ一覧
   &__contents {
+    height: calc(100vh - 190px);
+    padding: 46px 40px;
     background-color: #fafafa;
-    height: calc(100vh - 100px - 90px);
-    padding-top: 35px;
-    padding-left: 40px;
+    overflow: scroll;
     .message-info {
-      .username_and_post-date {
-        height: 16px;
+      padding-bottom: 40px;
+      .message-upper-info {
         display: flex;
-        margin-bottom: 12px;
-        .username {
-          height: 16px;
-          color: #333333;
+        margin-bottom: 10px;
+        &__talker {
+          color: #434a54;
           font-size: 16px;
-          line-height: 16px;
-          margin-right: 10px;
+          font-weight: bold;
         }
-        .post-date {
+        &__date {
           color: #999999;
           font-size: 12px;
+          margin-left: 10px;
         }
       }
       .text-contents {
