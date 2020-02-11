@@ -30,10 +30,17 @@
         こんにちは！
   
   -# 下：投稿フォーム
-  .message-form
-    %form.text-box
-      %input.text{:placeholder => "type a message", :type => "text"}
-      %label{class: "add_img"}
-        = icon('fas', 'image')
-        %input.file{:type => "file"}
-    %input.submit-btn{:value => "Send", :type => "submit"}
+  .message
+    = form_for [@group, @message] do |f|
+      .form__mask
+        = f.text_field :content, class: 'message-form', placeholder: 'type a message'
+        = f.label :image, class: 'add-img' do
+          = icon('fas', 'image', class: 'image')
+          = f.file_field :image, class: 'file-up'
+      = f.submit 'Send', class: 'submit-btn'
+    -# %form.text-box
+    -#   %input.text{:placeholder => "type a message", :type => "text"}
+    -#   %label{class: "add_img"}
+    -#     = icon('fas', 'image')
+    -#     %input.file{:type => "file"}
+    -# %input.submit-btn{:value => "Send", :type => "submit"}
