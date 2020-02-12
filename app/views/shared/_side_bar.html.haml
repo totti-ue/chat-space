@@ -1,21 +1,21 @@
 -# メイン画面左側全体を指定
 .side-bar
   -# 上：ユーザー名表示
-  .side-bar__top
-    .user-box
-      .user-name
+  .side-header
+    .side-header__box
+      %p.side-header__box__user-name
         = current_user.name
-      .edit-setting-icons
-        = link_to new_group_path, class: "edit-setting-icons__btn" do
+      .side-header__box__menu
+        = link_to new_group_path, class: "side-header__box__menu__new-group" do
           = icon('fa', 'edit')
-        = link_to edit_user_path(current_user.id), class: "edit-setting-icons__btn" do
+        = link_to edit_user_path(current_user.id), class: "side-header__box__menu__edit-user" do
           = icon('fa', 'cog')
   -# 下：グループリスト表示
-  .side-bar__group-lists
+  .groups
     - current_user.groups.each do |group|
-      = link_to "#", class: "group-link" do
-        .a_group-list
-          .group-name
+      = link_to group_messages_path(group) do
+        .group
+          %p.group__group-name
             = group.name
-          .message-notice
-            まだメッセージはありません 
+          %p.group__message-notice
+            = group.show_last_message 

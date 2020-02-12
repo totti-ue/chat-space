@@ -1,39 +1,28 @@
 -# メイン画面右側全体を指定
 .main-chat
   -# 上：選択中のグループ
-  .main-chat__current-group
-    .group-info
-      .group-name
-        group.name
-      .group-member
-        Member: username
-    .group-edit
-      = link_to edit_group_path(current_user), class: "group-edit__edit-btn" do
-        Edit
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group
+        = @group.name
+      %ul.main-header__left-box__member-list
+        Member:
+        - @group.users.each do |user|
+          = user.name
+        %li.main-header__left-box__member-list__member
+    = link_to edit_group_path(@group) do
+      .main-header__edit-btn Edit
 
   -# 中：メッセージ一覧
   .main-chat__contents
-    .message-info
-      .username_and_post-date
-        .username
-          username
-        .post-date
-          2020/02/02(Sun) 11:02:01
-      .text-contents
-        おはよう！
-      .username_and_post-date
-        .username
-          stranger
-        .post-date
-          2020/02/02(Sun) 13:08:34
-      .text-contents
-        こんにちは！
+    = render @messages
   
   -# 下：投稿フォーム
-  .message-form
-    %form.text-box
-      %input.text{:placeholder => "type a message", :type => "text"}
-      %label{class: "add_img"}
-        = icon('fas', 'image')
-        %input.file{:type => "file"}
-    %input.submit-btn{:value => "Send", :type => "submit"}
+  .message
+    = form_for [@group, @message] do |f|
+      .form__mask
+        = f.text_field :content, class: 'message-form', placeholder: 'type a message'
+        = f.label :image, class: 'add-img' do
+          = icon('fas', 'image', class: 'image')
+          = f.file_field :image, class: 'file-up'
+      = f.submit 'Send', class: 'submit-btn'
