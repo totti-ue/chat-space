@@ -1,30 +1,25 @@
 -# メイン画面右側全体を指定
 .main-chat
   -# 上：選択中のグループ
-  .main-chat__current-group
-    .group-info
-      .group-name
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group
         group.name
-      .group-member
+      %ul.main-header__left-box__member-list
         Member: username
-    .group-edit
-      = link_to edit_group_path(current_user), class: "group-edit__edit-btn" do
-        Edit
+        %li.main-header__left-box__member-list__member
+    = link_to edit_group_path(current_user) do
+      .main-header__edit-btn Edit
 
   -# 中：メッセージ一覧
   .main-chat__contents
-    .message-info
-      .massage-upper-info
-        %p{class: "message-upper-info__talker"} oni
-        %p{class: "message-upper-info__date"}2020/02/02(Sun) 11:02:01
-      %p{class: "text-contents"}おはよう！
-      .username_and_post-date
-        .username
-          stranger
-        .post-date
-          2020/02/02(Sun) 13:08:34
-      .text-contents
-        こんにちは！
+    = render @messages
+    -# .content
+    -#   .message-upper-info
+    -#     %p{class: "message-upper-info__talker"}oni
+    -#     %p{class: "message-upper-info__date"}2020/02/02(Sun) 11:02:01
+    -#   %p{class: "text-contents"}おはよう！
+
   
   -# 下：投稿フォーム
   .message
