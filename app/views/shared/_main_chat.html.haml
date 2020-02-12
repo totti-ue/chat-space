@@ -4,22 +4,18 @@
   .main-header
     .main-header__left-box
       %h2.main-header__left-box__current-group
-        group.name
+        = @group.name
       %ul.main-header__left-box__member-list
-        Member: username
+        Member:
+        - @group.users.each do |user|
+          = user.name
         %li.main-header__left-box__member-list__member
-    = link_to edit_group_path(current_user) do
+    = link_to edit_group_path(@group) do
       .main-header__edit-btn Edit
 
   -# 中：メッセージ一覧
   .main-chat__contents
     = render @messages
-    -# .content
-    -#   .message-upper-info
-    -#     %p{class: "message-upper-info__talker"}oni
-    -#     %p{class: "message-upper-info__date"}2020/02/02(Sun) 11:02:01
-    -#   %p{class: "text-contents"}おはよう！
-
   
   -# 下：投稿フォーム
   .message
@@ -30,9 +26,3 @@
           = icon('fas', 'image', class: 'image')
           = f.file_field :image, class: 'file-up'
       = f.submit 'Send', class: 'submit-btn'
-    -# %form.text-box
-    -#   %input.text{:placeholder => "type a message", :type => "text"}
-    -#   %label{class: "add_img"}
-    -#     = icon('fas', 'image')
-    -#     %input.file{:type => "file"}
-    -# %input.submit-btn{:value => "Send", :type => "submit"}
