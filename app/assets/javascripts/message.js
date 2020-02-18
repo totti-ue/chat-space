@@ -1,54 +1,54 @@
 $(function(){
 
   var buildHTML = function(message) {
-    var image = ( message.image ) ? `<img src="` + message.image + `" class="lower-info__image" >`: "";
+    var image = ( message.image ) ? `<img src= "${message.image}" class="lower-info__image" >`: "";
     if (message.content && message.image) {
-      var html =  `<div class="message" data-message-id=` + message.id + `>` +
-                    `<div class="upper-info">` +
-                      `<div class="upper-info__talker">` +
-                        message.user_name +
-                      `</div>` +
-                      `<div class="upper-info__date">` +
-                        message.created_at +
-                      `</div>` +
-                    `</div>` +
-                    `<div class="lower-info">` +
-                      `<p class="lower-info__content">` +
-                        message.content +
-                      `</p>` +
-                        image +
-                    `</div>` +
-                  `</div>`
+      var html =  `<div class="message" data-message-id="${message.id}" >
+                    <div class="upper-info">
+                      <div class="upper-info__talker">
+                        $${message.user_name}
+                      </div>
+                      <div class="upper-info__date">
+                        ${message.created_at}
+                      </div>
+                    </div>
+                    <div class="lower-info">
+                      <p class="lower-info__content">
+                        ${message.content}
+                      </p>
+                        ${image}
+                    </div>
+                  </div>`
     } else if (message.content) {
-      var html =  `<div class="message" data-message-id=` + message.id + `>` +
-                    `<div class="upper-info">` +
-                      `<div class="upper-info__talker">` +
-                        message.user_name +
-                      `</div>` +
-                      `<div class="upper-info__date">` +
-                        message.created_at +
-                      `</div>` +
-                    `</div>` +
-                    `<div class="lower-info">` +
-                      `<p class="lower-info__content">` +
-                        message.content +
-                      `</p>` +
-                    `</div>` +
-                  `</div>`
+      var html =  `<div class="message" data-message-id= "${message.id}" > 
+                    <div class="upper-info">
+                      <div class="upper-info__talker">
+                        ${message.user_name}
+                      </div>
+                      <div class="upper-info__date">
+                        ${message.created_at}
+                      </div>
+                    </div>
+                    <div class="lower-info">
+                      <p class="lower-info__content">
+                        ${message.content}
+                      </p>
+                    </div>
+                  </div>`
     } else if (message.image) {
-      var html =  `<div class="message" data-message-id=` + message.id + `>` +
-                    `<div class="upper-info">` +
-                      `<div class="upper-info__talker">` +
-                        message.user_name +
-                      `</div>` +
-                      `<div class="upper-info__date">` +
-                        message.created_at +
-                      `</div>` +
-                    `</div>` +
-                    `<div class="lower-info">` +
-                      image +
-                    `</div>` +
-                  `</div>`
+      var html =  `<div class="message" data-message-id= ${message.id} >
+                    <div class="upper-info">
+                      <div class="upper-info__talker">
+                        ${message.user_name}
+                      </div>
+                      <div class="upper-info__date">
+                        ${message.created_at}
+                      </div>
+                    </div>
+                    <div class="lower-info">
+                      ${image}
+                    </div>
+                  </div>`
     };
     return html;
   };
@@ -72,7 +72,7 @@ $(function(){
       }
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   };
 
@@ -89,7 +89,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data)
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
