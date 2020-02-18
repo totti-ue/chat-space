@@ -14,14 +14,14 @@
       .main-header__edit-btn Edit
 
   -# 中：メッセージ一覧
-  .main-chat__contents
+  .messages
     = render @messages
   
   -# 下：投稿フォーム
-  .message
+  .form
     = form_for [@group, @message] do |f|
       .form__mask
-        = f.text_field :content, class: 'message-form', placeholder: 'type a message'
+        = f.text_field :content, class: 'form__mask__message', placeholder: 'type a message'
         = f.label :image, class: 'add-img' do
           = icon('fas', 'image', class: 'image')
           = f.file_field :image, class: 'file-up'
