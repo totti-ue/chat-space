@@ -44,6 +44,15 @@ group :development, :test do
   gem 'faker'
 end
 
+
+ group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -61,15 +70,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# haml-railsを導入
 gem 'haml-rails'
-
-# アイコン導入gem
 gem 'font-awesome-sass'
-
 gem 'devise'
-
 gem 'pry-rails'
-
 gem 'carrierwave'
 gem 'mini_magick'
