@@ -6,7 +6,7 @@ $(function(){
       var html =  `<div class="message" data-message-id="${message.id}" >
                     <div class="upper-info">
                       <div class="upper-info__talker">
-                        $${message.user_name}
+                        ${message.user_name}
                       </div>
                       <div class="upper-info__date">
                         ${message.created_at}
